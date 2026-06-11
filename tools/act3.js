@@ -9,10 +9,21 @@
      most open maps. Bar: proven-impossible OR noz much longer than witness.
    Verbs:
    16 CLOCKING IN — bait, rewind past the warden, race the dead-end grind.
-   17 TIME THEFT  — L-bend shaft needs a backtrack; the trail kills it.
-   18 STILLNESS   — hunter rewinds, warden doesn't; desync the two.
-   19 OVERTIME    — park the warden ON the plate; it holds the gate open.
-   20 SEVERANCE   — park it, then cork the pocket with meat; grind UNIT 9. */
+   17 TIME THEFT  — one-door cold room; the warden corks the backtrack;
+                    bait it deep, rewind past it (SHIPPED: noz-proven, tight).
+   18 STILLNESS   — wait to freeze the hunter, one Z past the warden,
+                    reclaim UNIT 9 on the blood (SHIPPED: noz-proven, tight).
+   19 OVERTIME    — bait the warden onto the plate via the dead-end catwalk,
+                    Z-burst down, push through the held gate (SHIPPED:
+                    noz-proven, tight at 4).
+   20 SEVERANCE   — finale: UNIT 9 self-severs on the opening lane; the
+                    full overtime park covers the rest of the quota
+                    (SHIPPED: noz-proven, tight at 4). Cork-the-pocket
+                    designs all die to the pin: a chasing hunter camps the
+                    cell behind the cork, adjacent to where any un-corking
+                    push must land the player. Gates never help hunters:
+                    they cannot STEP onto '=' even when open, and slides
+                    rest on the bloodless gate tile. */
 "use strict";
 
 const LEVELS = [
@@ -37,24 +48,23 @@ const LEVELS = [
     id: "L17",
     act: 3,
     quota: 2,
-    undos: 3,
+    undos: 2,
     name: "NIGHT 17 — TIME THEFT",
     map: [
-      "############",
-      "#.......K..#",
-      "#.####.###.#",
-      "#.#..M...#.#",
-      "#.#.##G###.#",
-      "#.#.######.#",
-      "#........P.#",
-      "######D#####",
+      "########",
+      "DK....P#",
+      "######.#",
+      "######.#",
+      "###GM..#",
+      "###....#",
+      "########",
     ],
   },
   {
     id: "L18",
     act: 3,
     quota: 2,
-    undos: 3,
+    undos: 1,
     name: "NIGHT 18 — STILLNESS",
     map: [
       "#############",
@@ -76,8 +86,8 @@ const LEVELS = [
     map: [
       "#############",
       "#...........#",
-      "#.########+.#",
-      "#.#########.#",
+      "##########+.#",
+      "###########.#",
       "#K..........#",
       "#.M~=G#.....#",
       "#D....#..P..#",
@@ -88,20 +98,18 @@ const LEVELS = [
     id: "L20",
     act: 3,
     quota: 4,
-    undos: 2,
+    undos: 4,
     name: "NIGHT 20 — SEVERANCE",
     map: [
       "##############",
       "#............#",
-      "#.#########+.#",
-      "#.##########.#",
-      "#............#",
-      "#.M~=G#..M.U.#",
-      "#D....#......#",
-      "#######...P..#",
+      "###########+.#",
+      "############.#",
+      "#K...........#",
+      "#.M~=G#.....P#",
+      "#D....#U.~~~G#",
       "##############",
     ],
-    meta: { entities: [{ t: "K", x: 8, y: 1 }] },
   },
 ];
 

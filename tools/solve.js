@@ -347,6 +347,10 @@ function play(def, str) {
 
 /* ---------------- CLI ---------------- */
 const [, , cmd, idArg, strArg] = process.argv;
+/* optional env caps for deep probes: MAXDEPTH=96 MAXNODES=2000000 */
+const CAPS = {};
+if (process.env.MAXDEPTH) CAPS.maxDepth = +process.env.MAXDEPTH;
+if (process.env.MAXNODES) CAPS.maxNodes = +process.env.MAXNODES;
 function runAll(def) {
   const errs = lint(def);
   if (errs.length) {
@@ -390,7 +394,7 @@ if (cmd === "lint") {
 } else if (cmd === "noz") {
   console.log(JSON.stringify(bfsNoZ(defById(idArg)), null, 2));
 } else if (cmd === "solve") {
-  const r = searchWithZ(defById(idArg));
+  const r = searchWithZ(defById(idArg), { ...CAPS });
   console.log(JSON.stringify(r));
   if (r.witness)
     console.log(
@@ -400,7 +404,7 @@ if (cmd === "lint") {
 } else if (cmd === "tight") {
   const def = defById(idArg);
   console.log(
-    JSON.stringify(searchWithZ(def, { budget: (def.undos || 0) - 1 })),
+    JSON.stringify(searchWithZ(def, { budget: (def.undos || 0) - 1, ...CAPS })),
   );
 } else if (cmd === "play") {
   play(defById(idArg), strArg || "");

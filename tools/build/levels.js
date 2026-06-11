@@ -248,6 +248,96 @@
               "#D##########",
             ],
           },
+          // The cold room has one door. The warden corks the backtrack:
+          // proven unsolvable without Z (79 states), budget tight at 2.
+          // Witness (solver-verified, uses full budget):
+          //   DUDDDLLRDLZZRUUULLLLLL
+          {
+            id: "L17",
+            act: 3,
+            quota: 2,
+            undos: 2,
+            name: "NIGHT 17 — TIME THEFT",
+            map: [
+              "########",
+              "DK....P#",
+              "######.#",
+              "######.#",
+              "###GM..#",
+              "###....#",
+              "########",
+            ],
+          },
+          // Quota is the hunter itself: hold still (W) to freeze its chase,
+          // spend the lone Z to swap past the warden, then let UNIT 9 slide
+          // down the blood into the grinder and ride the same strip out.
+          // Proven unsolvable without Z (151 states), budget tight at 1.
+          // Witness (solver-verified, uses full budget):
+          //   UUDDDRWDZULUURRDRDRDDDLL
+          {
+            id: "L18",
+            act: 3,
+            quota: 2,
+            undos: 1,
+            name: "NIGHT 18 — STILLNESS",
+            map: [
+              "#############",
+              "#.....K.....#",
+              "#.G~~~......#",
+              "#P.###......#",
+              "#..####..U..#",
+              "#..#........#",
+              "#..#.D......#",
+              "#############",
+            ],
+          },
+          // The gate only opens for parked mass. Bait the warden onto the
+          // plate up the dead-end catwalk, then spend all four rewinds
+          // getting back down — one move early and it walks off the plate.
+          // Proven unsolvable without Z (166 states), budget tight at 4.
+          // Witness (solver-verified, uses full budget):
+          //   UUDUDURRWUUULZZZZLLLLLLLLLLDRRLD
+          {
+            id: "L19",
+            act: 3,
+            quota: 2,
+            undos: 4,
+            name: "NIGHT 19 — OVERTIME",
+            map: [
+              "#############",
+              "#...........#",
+              "##########+.#",
+              "###########.#",
+              "#K..........#",
+              "#.M~=G#.....#",
+              "#D....#..P..#",
+              "#############",
+            ],
+          },
+          // Finale. UNIT 9 severs itself on your first step — its chase
+          // takes it onto the blood lane and into the east reclaimer.
+          // The rest is the full overtime park (all four rewinds, tight)
+          // to hold the gate for the last of the quota.
+          // Proven unsolvable without Z (13216 states), budget tight at 4.
+          // Witness (solver-verified, uses full budget):
+          //   UUUUDUDDDWUUULZZZZLLLLLLLLLLLDRRLD
+          {
+            id: "L20",
+            act: 3,
+            quota: 4,
+            undos: 4,
+            name: "NIGHT 20 — SEVERANCE",
+            map: [
+              "##############",
+              "#............#",
+              "###########+.#",
+              "############.#",
+              "#K...........#",
+              "#.M~=G#.....P#",
+              "#D....#U.~~~G#",
+              "##############",
+            ],
+          },
         ];
 
         const api = { LEVELS };
